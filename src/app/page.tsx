@@ -83,16 +83,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Hero Image */}
-        <div className="mt-12 overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-card)]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/home-hero.webp"
-            alt="Rocky Mountain Goat — The GOAT Tech"
-            className="h-[260px] w-full object-cover sm:h-[400px] lg:h-[460px]"
-          />
-        </div>
-
         {/* 3 Core Service Cards */}
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {SERVICE_CARDS.map((card) => {
