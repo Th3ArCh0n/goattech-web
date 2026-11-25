@@ -12,6 +12,19 @@ const SERVICE_LINKS = [
   { href: "/details-matter", label: "Details Matter (Car Photography)" },
 ];
 
+function PortalButtons() {
+  const buttonClass = "inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[var(--accent)] px-4 py-3 text-[15px] font-medium text-white transition-colors duration-150 hover:bg-[var(--accent-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] lg:py-2 lg:text-[13px]";
+
+  return (
+    <>
+      <Link href="/portal" className={buttonClass}>GOAT Portal</Link>
+      <a href="https://support.goattechllc.com" target="_blank" rel="noopener noreferrer" className={buttonClass}>
+        Submit a Ticket<span className="sr-only"> (opens in a new tab)</span>
+      </a>
+    </>
+  );
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -72,7 +85,7 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
           <Link
             href="/"
             aria-current={pathname === "/" ? "page" : undefined}
@@ -179,19 +192,16 @@ export function SiteHeader() {
 
         {/* Right CTA & Mobile Toggle */}
         <div className="flex items-center gap-2.5">
-          <Link
-            href="/portal"
-            className="hidden rounded-full bg-[var(--accent)] px-4 py-2 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-[var(--accent-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] md:inline-flex"
-          >
-            GOAT Portal
-          </Link>
+          <div className="hidden gap-2.5 lg:flex">
+            <PortalButtons />
+          </div>
 
           <button
             type="button"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((prev) => !prev)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] transition-colors hover:bg-[var(--surface-2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] transition-colors hover:bg-[var(--surface-2)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] lg:hidden"
           >
             {mobileOpen ? (
               <X className="h-5 w-5" strokeWidth={1.75} />
@@ -204,7 +214,7 @@ export function SiteHeader() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="border-t border-[var(--border)] bg-white px-5 pb-6 pt-4 md:hidden">
+        <div className="border-t border-[var(--border)] bg-white px-5 pb-6 pt-4 lg:hidden">
           <nav aria-label="Mobile Navigation" className="space-y-1">
             <Link
               href="/"
@@ -244,13 +254,8 @@ export function SiteHeader() {
             >
               Contact
             </Link>
-            <div className="pt-3">
-              <Link
-                href="/portal"
-                className="flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-4 py-3 text-[15px] font-medium text-white hover:bg-[var(--accent-hover)]"
-              >
-                GOAT Portal
-              </Link>
+            <div className="grid gap-2 pt-3">
+              <PortalButtons />
             </div>
           </nav>
         </div>
