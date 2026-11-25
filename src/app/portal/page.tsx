@@ -51,8 +51,8 @@ const PORTAL_ACTIONS = [
   },
   {
     title: "Open A Ticket",
-    description: "Submit or track an IT support ticket via Zoho Desk.",
-    href: "https://goattechllc.zohodesk.com/portal",
+    description: "Submit or track an IT support ticket in the GOAT Support Portal.",
+    href: "https://support.goattechllc.com",
     external: true,
     icon: LifeBuoy,
     tag: "TICKETS",
