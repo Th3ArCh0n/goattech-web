@@ -36,7 +36,7 @@ const PORTAL_ACTIONS = [
   {
     title: "GOAT Comms PBX",
     description: "Sign in to the GOAT Comms PBX management portal.",
-    href: "https://login.simplelogin.net",
+    href: "https://goat.simplelogin.net",
     external: true,
     icon: PhoneCall,
     tag: "PORTAL",
