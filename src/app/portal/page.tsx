@@ -87,7 +87,9 @@ export default function PortalPage() {
             <img
               src="/images/portal.webp"
               alt="Welcome to the GOAT Portal"
-              className="h-[240px] w-full object-cover sm:h-[300px]"
+              width={1254}
+              height={1254}
+              className="block h-auto w-full"
             />
           </div>
         </div>
